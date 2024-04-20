@@ -1,0 +1,8 @@
+.header_ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    list-style-type: none;
+    background-color: aqua;
+}
