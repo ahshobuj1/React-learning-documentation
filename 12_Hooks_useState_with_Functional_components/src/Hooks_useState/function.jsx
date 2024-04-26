@@ -13,12 +13,7 @@ export default function HooksFunction() {
                 }}>
                 Increment++
             </button>
-            <button
-                onClick={() => {
-                    setState(count - 1);
-                }}>
-                Decrement--
-            </button>
+            <button onClick={() => setState(count - 1)}> Decrement--</button>
         </div>
     );
 }
