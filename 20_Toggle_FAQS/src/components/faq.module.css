@@ -1,0 +1,17 @@
+.container {
+    margin: 5px;
+    background-color: #96804e;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.title {
+    color: white;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
