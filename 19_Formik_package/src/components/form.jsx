@@ -2,21 +2,44 @@
 /* eslint-disable react/prop-types */
 
 //import {useState} from 'react';
-import {useFormik} from 'formik';
 
-const Form = () => {
+import {useFormik} from 'formik';
+import * as yup from 'yup';
+
+const Form = (props) => {
     const formik = useFormik({
         initialValues: {
             name: '',
             email: '',
             password: '',
         },
-        onSubmit: (values) => {
-            console.log(values);
+
+        validationSchema: yup.object({
+            name: yup.string().min(2, 'Name must have 2 characters').required(),
+
+            email: yup.string().email().required(),
+            password: yup.string().min(8).required(),
+        }),
+
+        onSubmit: (values, {resetForm}) => {
+            props.getValue(values);
+            resetForm({values: ''});
         },
     });
-
     const {name, email, password} = formik.values;
+
+    const renderNameErrors = formik.touched.name && (
+        <span style={{color: 'red'}}>{formik.errors.name}</span>
+    );
+
+    const renderEmailErrors = formik.touched.email && (
+        <span style={{color: 'red'}}>{formik.errors.email}</span>
+    );
+
+    const renderPasswordErrors = formik.touched.password &&
+        formik.errors.password && (
+            <span style={{color: 'red'}}>{formik.errors.password}</span>
+        );
 
     return (
         <div>
@@ -34,6 +57,8 @@ const Form = () => {
                         value={name}
                         onChange={formik.handleChange}
                     />
+                    <br />
+                    {renderNameErrors}
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -46,6 +71,8 @@ const Form = () => {
                         value={email}
                         onChange={formik.handleChange}
                     />
+                    <br />
+                    {renderEmailErrors}
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
@@ -58,6 +85,8 @@ const Form = () => {
                         value={password}
                         onChange={formik.handleChange}
                     />
+                    <br />
+                    {renderPasswordErrors}
                 </div>
 
                 <div>
