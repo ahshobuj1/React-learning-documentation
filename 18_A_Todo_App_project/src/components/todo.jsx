@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import {toast} from 'react-toastify';
+
 const Todo = (props) => {
     const {title, desc} = props.todo;
     const {id} = props;
@@ -13,8 +15,11 @@ const Todo = (props) => {
                 </div>
                 <div>
                     <button
-                        onClick={() => props.onRemoveTodo(id)}
-                        className="fa fa-trash fa-1.5x"></button>
+                        className="fa fa-trash fa-1.5x"
+                        onClick={() => {
+                            toast('Note is Removed');
+                            return props.onRemoveTodo(id);
+                        }}></button>
                 </div>
             </div>
         </article>

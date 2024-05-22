@@ -2,6 +2,9 @@
 
 import {useState} from 'react';
 
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const NewTodo = (props) => {
     const [todo, setTodo] = useState({title: '', desc: ''});
 
@@ -37,9 +40,14 @@ const NewTodo = (props) => {
                     onChange={changeFunction}></textarea>
 
                 <div>
-                    <button id="btn" type="submit">
+                    <button
+                        id="btn"
+                        type="submit"
+                        onClick={() => toast('New Note is added')}>
                         Add Note
                     </button>
+
+                    <ToastContainer />
                 </div>
             </form>
         </div>
