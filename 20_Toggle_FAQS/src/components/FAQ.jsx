@@ -11,7 +11,7 @@ const FAQ = ({title, desc, id}) => {
             <div className={style.flex}>
                 <h2 className={style.title}>{title}</h2>
                 <button onClick={() => setToggle(!toggle)}>
-                    {toggle ? '-' : '+'}
+                    {toggle ? 'hide' : '+'}
                 </button>
             </div>
 
