@@ -1,0 +1,22 @@
+.search {
+    width: 80%;
+    margin: 0 auto;
+}
+
+input {
+    border: none;
+    outline: none;
+    border: 2px solid #c9d3c9;
+    margin: 5px 0 10px;
+    padding: 5px;
+    font-style: italic;
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #615d5d;
+    color: #fff;
+}
+
+input::placeholder {
+    color: #fff;
+}
