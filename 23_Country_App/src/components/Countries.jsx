@@ -14,7 +14,6 @@ const Countries = (props) => {
                     <Country
                         country={country}
                         key={id}
-                        id={id}
                         onRemoveCountry={props.onRemoveCountry}
                     />
                 );

@@ -31,7 +31,7 @@ function App() {
 
     useEffect(() => {
         dataFetch(url);
-    }, []);
+    }, [url]);
 
     const handleRemoveCountry = (common) => {
         const filter = filterCountries.filter(
