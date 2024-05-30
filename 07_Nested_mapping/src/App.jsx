@@ -35,8 +35,8 @@ function App() {
                     <h2>FullName :{data.name}</h2>
                     <h3>Age : {data.age}</h3>
 
-                    {data.phones.map((phone) => (
-                        <div>
+                    {data.phones.map((phone, index) => (
+                        <div key={index}>
                             <p>Home : {phone.home}</p>
                             <p>Office : {phone.office}</p>
                         </div>
