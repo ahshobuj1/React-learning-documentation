@@ -23,11 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-vite.config.js
-README.md
-package-lock.json
-public
-assets
-app.css
-index.html
-.eslintrc.cjs
